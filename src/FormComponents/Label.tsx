@@ -1,3 +1,4 @@
+import '../App.css'
 import { FunctionComponent } from "react";
 
 
