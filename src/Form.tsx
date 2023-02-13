@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState,useEffect, useCallback,useRef} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Label from './FormComponents/Label';
 import Inputbox from './FormComponents/Inputbox';
@@ -8,8 +8,10 @@ import Checkbox from './FormComponents/Checkbox';
 import './App.css';
 
   const Form = ()=>{
-  const [formdata,setformdata]=useState({firstname:"",lastname:"",department:"",gender:"",hobby:[]})
-  const[valid,isvalid]=useState(true)
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const [formdata,setformdata]=useState({firstname:"",lastname:"",email:"",department:"",gender:"",hobby:[]})
+  const [validfirststate,setvalidfirststate]=useState(false)
+  const [disabled,setdisabled]=useState(false)
   const navigate=useNavigate()
 
   const updateName = (event:any):void => {
@@ -24,26 +26,53 @@ import './App.css';
     else
      setformdata((prev)=>({...prev,[name]:value}));
 }
+
+
+const mailValidation=useCallback(()=>{
+  if(!formdata.email.match(validRegex)){
+    return true;
+  }
+  else
+    return false;
+},[formdata.email])
+
 const checkvalid=(e:any)=>{
   e.preventDefault();
-  if(formdata.firstname===""||formdata.lastname===""||formdata.department===""||formdata.gender===""||formdata.hobby.length===0){
-    isvalid(false);
+  if(formdata.firstname===""||formdata.lastname===""||formdata.department===""||formdata.gender===""||formdata.hobby.length===0||formdata.email===""||mailValidation()){
     navigate("/")
-    alert("Fill out all details")
+    alert("Error invalid Form")
+    setdisabled(true)
+    setvalidfirststate(true)
   }
   else{
     navigate(`/welcome/${formdata.firstname}`,{state:{formdata}})
   }
 }
+const checkData=()=>{
+  if(formdata.firstname===""||formdata.lastname===""||formdata.department===""||formdata.gender===""||formdata.hobby.length===0||formdata.email===""||mailValidation()){
+   setdisabled(true)
+  }
+  else{
+    setdisabled(false)
+  }
+}
 
+useEffect(()=>{
+ if(validfirststate){
+   checkData()
+ } 
+},[formdata])
   return (
    <div className='main'><div className="App">
       <h2>Form</h2>
       <div className='row'>
-        <Label text={"First Name"}/><Inputbox updateName={updateName} placeholder={"first name"} name="firstname" value={formdata.firstname}/>
+        <Label text={"First Name"}/><Inputbox updateName={updateName} type={'text'} placeholder={"first name"} name="firstname" value={formdata.firstname}/>
         </div>
         <div className='row'>
-        <Label text={"Last Name"}/><Inputbox updateName={updateName} placeholder={"last name"} name="lastname" value={formdata.lastname}/>
+        <Label text={"Last Name"}/><Inputbox updateName={updateName} type={'text'} placeholder={"last name"} name="lastname" value={formdata.lastname}/>
+        </div>
+        <div className='row'>
+        <Label text={"Email"}/><Inputbox updateName={updateName} type={'email'} placeholder={"Email"} name="email" value={formdata.email}/>
         </div>
         <div className='row'>
         <Label text={"Department"}/><Drop updateName={updateName} name="department" value={formdata.department}/>
@@ -52,9 +81,9 @@ const checkvalid=(e:any)=>{
         <Label text={"Gender"}/><div className='radiobtn'><Radio value="Male" updateName={updateName} name="gender"/><Label text={"Male"}/><Radio updateName={updateName} name="gender" value="Female"/><Label text={"Female"}/></div>
         </div>
         <div className='row'>
-        <Label text={"Hobies"}/><div className='checkbox'><Checkbox value="Reading" updateName={updateName} name="hobby"/><Label text={"Reading"}/><Checkbox value="Cricket" updateName={updateName} name="hobby"/><Label text={"Cricket"}/><Checkbox value="Series" updateName={updateName} name="hobby"/><Label text={"Series"}/></div>
+        <Label text={"Hobbies"}/><div className='checkbox'><Checkbox value="Reading" updateName={updateName} name="hobby"/><Label text={"Reading"}/><Checkbox value="Cricket" updateName={updateName} name="hobby"/><Label text={"Cricket"}/><Checkbox value="Series" updateName={updateName} name="hobby"/><Label text={"Series"}/></div>
         </div>
-       {valid&&<button className='submitbtn' onClick={(e)=>checkvalid(e)}>Submit</button>}
+       <button disabled={disabled} className='submitbtn' onClick={(e)=>checkvalid(e)}>Submit</button>
     </div>
     </div>
     
