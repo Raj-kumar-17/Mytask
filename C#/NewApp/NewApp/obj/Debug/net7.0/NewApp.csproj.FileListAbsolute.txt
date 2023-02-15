@@ -1,0 +1,15 @@
+/Users/rajkumar/Projects/NewApp/NewApp/bin/Debug/net7.0/NewApp
+/Users/rajkumar/Projects/NewApp/NewApp/bin/Debug/net7.0/NewApp.deps.json
+/Users/rajkumar/Projects/NewApp/NewApp/bin/Debug/net7.0/NewApp.runtimeconfig.json
+/Users/rajkumar/Projects/NewApp/NewApp/bin/Debug/net7.0/NewApp.dll
+/Users/rajkumar/Projects/NewApp/NewApp/bin/Debug/net7.0/NewApp.pdb
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.csproj.AssemblyReference.cache
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.AssemblyInfoInputs.cache
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.AssemblyInfo.cs
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.csproj.CoreCompileInputs.cache
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.dll
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/refint/NewApp.dll
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.pdb
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/NewApp.genruntimeconfig.cache
+/Users/rajkumar/Projects/NewApp/NewApp/obj/Debug/net7.0/ref/NewApp.dll
