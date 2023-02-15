@@ -1,6 +1,4 @@
-import '../App.css'
 import { FunctionComponent } from "react";
-
 
 interface myprop {
     text: string;

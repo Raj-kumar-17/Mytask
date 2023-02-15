@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css'
 
 interface IsecondChildProps {
   updateName: (arg:any,arg1:any) => void

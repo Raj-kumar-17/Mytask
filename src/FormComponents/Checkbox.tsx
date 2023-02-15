@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+
 
 interface IfourthChildProps {
     updateName: (arg:any,arg1:any) => void

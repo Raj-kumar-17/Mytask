@@ -1,17 +1,24 @@
-import '../App.css'
+import styled from "styled-components";
+import React from 'react'
 
 interface IfirstChildProps {
-    updateName: (arg:any,arg1:any) => void
+    updateName: (arg:string,arg1:string|number) => void
     placeholder:string
     name:string
     value:string|number
     type:string
   }
+ const InputBoxStyle:any= styled.input`
+ padding:1px;
+ `
+ const Stylediv:any=styled.div`
+ padding:0px 5px;
+ `
 const Inputbox: React.FC<IfirstChildProps> = ({updateName,placeholder,name,value,type}) => {
     return(
-       <div className='inputbox'>
-        <input onChange={event=>updateName(event,value)} type={type} placeholder={placeholder} name={name} value={value}/>
-       </div>
+        <Stylediv>
+        <InputBoxStyle onChange={event=>updateName(event,value)} type={type} placeholder={placeholder} name={name} value={value}/>
+        </Stylediv>
     );
 }
 

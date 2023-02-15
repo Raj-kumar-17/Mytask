@@ -2,7 +2,7 @@ import { useLocation,useNavigate} from "react-router-dom";
 import Inputbox from './FormComponents/Inputbox';
 import Label from './FormComponents/Label';
 import { useState,useMemo } from "react";
-import './App.css';
+
 
 const Newrender=() =>{
   const[bmi,setbmi]=useState({height:0,weight:0})

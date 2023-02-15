@@ -1,14 +1,19 @@
-import {useState,useEffect, useCallback,useRef} from 'react';
+import {useState,useEffect, useCallback} from 'react';
+import styled from 'styled-components';
+import AxiosData from './AxiosData';
 import {useNavigate} from 'react-router-dom';
 import Label from './FormComponents/Label';
 import Inputbox from './FormComponents/Inputbox';
 import Drop from './FormComponents/Drop';
 import Radio from './FormComponents/Radio';
 import Checkbox from './FormComponents/Checkbox';
-import './App.css';
 
   const Form = ()=>{
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+/*Styled Component*/
+
+/*---------------*/
+
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const [formdata,setformdata]=useState({firstname:"",lastname:"",email:"",department:"",gender:"",hobby:[]})
   const [validfirststate,setvalidfirststate]=useState(false)
   const [disabled,setdisabled]=useState(false)
@@ -39,7 +44,7 @@ const mailValidation=useCallback(()=>{
 const checkvalid=(e:any)=>{
   e.preventDefault();
   if(formdata.firstname===""||formdata.lastname===""||formdata.department===""||formdata.gender===""||formdata.hobby.length===0||formdata.email===""||mailValidation()){
-    navigate("/")
+    navigate("/form")
     alert("Error invalid Form")
     setdisabled(true)
     setvalidfirststate(true)
@@ -48,12 +53,15 @@ const checkvalid=(e:any)=>{
     navigate(`/welcome/${formdata.firstname}`,{state:{formdata}})
   }
 }
+
 const checkData=()=>{
   if(formdata.firstname===""||formdata.lastname===""||formdata.department===""||formdata.gender===""||formdata.hobby.length===0||formdata.email===""||mailValidation()){
    setdisabled(true)
+   return true;
   }
   else{
     setdisabled(false)
+    return false;
   }
 }
 
@@ -62,6 +70,7 @@ useEffect(()=>{
    checkData()
  } 
 },[formdata])
+
   return (
    <div className='main'><div className="App">
       <h2>Form</h2>
@@ -83,8 +92,10 @@ useEffect(()=>{
         <div className='row'>
         <Label text={"Hobbies"}/><div className='checkbox'><Checkbox value="Reading" updateName={updateName} name="hobby"/><Label text={"Reading"}/><Checkbox value="Cricket" updateName={updateName} name="hobby"/><Label text={"Cricket"}/><Checkbox value="Series" updateName={updateName} name="hobby"/><Label text={"Series"}/></div>
         </div>
-       <button disabled={disabled} className='submitbtn' onClick={(e)=>checkvalid(e)}>Submit</button>
+       <button data-testid="btn" disabled={disabled} className='submitbtn' onClick={(e)=>checkvalid(e)}>Submit</button>
     </div>
+
+<AxiosData/>
     </div>
     
 

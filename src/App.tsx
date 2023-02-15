@@ -1,19 +1,19 @@
-import { BrowserRouter as Router,Route,Routes,NavLink} from 'react-router-dom';
+import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import Newrender from './Newrender';
+import Navbar from './Navbar';
 import Form from './Form';
-import './App.css';
-
+import Welcome from './Welcome';
 
 function App() {
   return (
-    <div>
   <Router>
+    <Navbar/>
     <Routes>
-    <Route path="/" element={<Form/>}/>
+    <Route path="/" element={<Welcome/>}/>
+    <Route path="/form" element={<Form/>}/>
     <Route path="/welcome/:formdata" element={<Newrender/>}/>
     </Routes>
     </Router>
-    </div>
   );
 }
 

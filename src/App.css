@@ -2,8 +2,9 @@
   display:flex;
   align-items: center;
   justify-content:center;
+  flex-direction: column;
   height:100vh;
-  background: #292927;
+  background: #F9F6EE;
 }
 
 .row{
@@ -16,20 +17,18 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
   padding:20px;
   width:300px;
-  height:320px;
+  height:300px;
   border-radius:5px;
   background: #4682B4;
  background: linear-gradient(to bottom, #4682B4 0%, #3773A5 100%);
  color:white;
+ margin-top:30px;
 }
 
 .App:hover{
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.8);
 }
 
-.inputbox{
-  padding:5px;
-}
 
 .dropdown{
   padding: 5px;
@@ -81,6 +80,7 @@ label{
   justify-content:center;
   flex-direction: column;
   border-radius: 5px;
+  margin-top:60px;
 }
 
 .space{
