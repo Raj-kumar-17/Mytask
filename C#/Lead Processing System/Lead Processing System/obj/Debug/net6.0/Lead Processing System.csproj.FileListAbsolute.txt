@@ -1,0 +1,15 @@
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\bin\Debug\net6.0\Lead Processing System.exe
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\bin\Debug\net6.0\Lead Processing System.deps.json
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\bin\Debug\net6.0\Lead Processing System.runtimeconfig.json
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\bin\Debug\net6.0\Lead Processing System.dll
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\bin\Debug\net6.0\Lead Processing System.pdb
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.csproj.AssemblyReference.cache
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.AssemblyInfoInputs.cache
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.AssemblyInfo.cs
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.csproj.CoreCompileInputs.cache
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.dll
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\refint\Lead Processing System.dll
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.pdb
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\Lead Processing System.genruntimeconfig.cache
+C:\Users\RajM\source\repos\Lead Processing System\Lead Processing System\obj\Debug\net6.0\ref\Lead Processing System.dll
